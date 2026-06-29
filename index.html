@@ -1,9 +1,14 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aktivovat Trading Arena | ARENIX</title>
+<title>Activate Trading Arena | ARENIX</title>
+<meta name="description" content="Activate your ARENIX Trading Arena, verify your email and generate an Arena Link for your community.">
+<link rel="alternate" hreflang="en" href="https://arenix.app/register.html">
+<link rel="alternate" hreflang="cs" href="https://arenix.app/cs/register.html">
+<link rel="alternate" hreflang="de" href="https://arenix.app/de/register.html">
+<link rel="alternate" hreflang="x-default" href="https://arenix.app/register.html">
 <style>
 :root{
   --bg:#03060c;
@@ -120,6 +125,15 @@ input:focus,select:focus{border-color:rgba(53,227,162,.58);box-shadow:0 0 0 4px 
   .brand{gap:9px}
   .back-link{display:none}
 }
+
+/* === LANGUAGE SWITCHER PATCH === */
+.nav-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end;}
+.lang-switch{display:flex;align-items:center;gap:8px;border:1px solid rgba(255,244,223,.13);background:rgba(255,244,223,.045);border-radius:999px;padding:6px 8px;}
+.lang-switch a{color:rgba(255,244,223,.62);text-decoration:none;font-size:11px;font-weight:1000;letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border-radius:999px;}
+.lang-switch a.active{color:#061018;background:linear-gradient(135deg,var(--emerald),#b7ffe1);}
+.lang-switch a:hover{color:var(--gold-soft);}
+@media(max-width:680px){.nav-actions{gap:8px}.lang-switch{order:2;width:100%;justify-content:center}}
+@media(max-width:360px){.nav-actions{display:flex}.back-link{display:inline-flex}}
 </style>
 </head>
 <body>
@@ -134,131 +148,76 @@ input:focus,select:focus{border-color:rgba(53,227,162,.58);box-shadow:0 0 0 4px 
         <span>Trading Arena</span>
       </div>
     </div>
-    <a class="back-link" href="https://bossi859-beep.github.io/web_hero_page/">← Zpět na úvod</a>
+    <div class="nav-actions">
+      <nav class="lang-switch" aria-label="Language switcher">
+        <a class="active" href="/register.html">EN</a>
+        <a href="/cs/register.html">CZ</a>
+        <a href="/de/register.html">DE</a>
+      </nav>
+      <a class="back-link" href="/">← Back to Home</a>
+    </div>
   </div>
 </header>
 
 <main class="wrap page">
   <section class="copy" aria-label="Trading Arena activation">
-    <div class="kicker"><i class="pulse"></i>Aktivace Trading Arény</div>
+    <div class="kicker"><i class="pulse"></i>Trading Arena Activation</div>
 
-    <h1>
-      <span>Konfigurace Aréna Linku</span>
-    </h1>
+    <h1><span>Arena Link Configuration</span></h1>
 
-    <p class="lead">
-      Provoz je spuštěn v režimu s Aréna Credits. Přístup se odemkne po ověření e-mailu.
-    </p>
+    <p class="lead">The platform is running in Arena Credits mode. Access is unlocked after email verification.</p>
 
     <div class="promise" aria-label="Key benefits">
-      <div class="promise-card"><small>01</small><b><br>Ověření</b></div>
+      <div class="promise-card"><small>01</small><b><br>Verification</b></div>
       <div class="promise-card"><small>02</small><b><br>Link</b></div>
-      <div class="promise-card"><small>03</small><b><br>Aréna připravena</b></div>
+      <div class="promise-card"><small>03</small><b><br>Arena Ready</b></div>
     </div>
 
     <div class="flow">
-      <div class="flow-title">Co se stane po konfiguraci</div>
+      <div class="flow-title">What happens after configuration</div>
       <div class="flow-steps">
-        <div class="step"><span class="step-num">1</span><span>Okamžitý přístup</span></div>
+        <div class="step"><span class="step-num">1</span><span>Instant Access</span></div>
         <div class="arrow">→</div>
-        <div class="step"><span class="step-num">2</span><span>Spuštění Arény</span></div>
+        <div class="step"><span class="step-num">2</span><span>Arena Launch</span></div>
         <div class="arrow">→</div>
-        <div class="step"><span class="step-num">3</span><span>Monetizace uzamčena</span></div>
+        <div class="step"><span class="step-num">3</span><span>Monetization Locked</span></div>
       </div>
     </div>
 
-    <p class="note">
-      Arena slouží jako zátěžový test výkonnosti a konverze vaší komunity.<br> Monetizační vrstva, Web3 flow a smart kontrakt se odemykají až po schválení.
-    </p>
+    <p class="note">The Arena is used as a performance and conversion stress test for your community.<br> The monetization layer, Web3 flow and smart contract access unlock only after approval.</p>
   </section>
 
   <section class="form-panel" aria-label="Registration form">
     <div class="form-head">
-      <h2>Aktivace Arény</h2>
-      <p>Po verifikaci e-mailu systém automaticky vygeneruje Arena Link a aktivuje přístup.</p>
+      <h2>Arena Activation</h2>
+      <p>After email verification, the system will automatically generate your Arena Link and activate access.</p>
     </div>
 
     <form id="arenaForm" action="#" method="post" data-dev-endpoint="/api/partners/training-arena/register">
-      <div class="field">
-        <label for="partnerName">Jméno / Název partnera</label>
-        <input id="partnerName" name="partner_name" type="text" placeholder="Např. Jan Novák / FX Community" required>
-      </div>
-
-      <div class="field">
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="email" placeholder="vas@email.com" required>
-      </div>
-
-      <div class="field">
-        <label for="contact">WhatsApp / Telegram kontakt <span style="color:rgba(255,244,223,.42);font-weight:900;">— volitelné</span></label>
-        <input id="contact" name="contact" type="text" placeholder="@telegram nebo +420...">
-      </div>
-
-      <div class="field">
-        <label for="communityName">Název komunity</label>
-        <input id="communityName" name="community_name" type="text" placeholder="Např. Prague Forex Traders" required>
-      </div>
+      <div class="field"><label for="partnerName">Partner Name / Brand Name</label><input id="partnerName" name="partner_name" type="text" placeholder="E.g. John Smith / FX Community" required></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com" required></div>
+      <div class="field"><label for="contact">WhatsApp / Telegram Contact <span style="color:rgba(255,244,223,.42);font-weight:900;">— optional</span></label><input id="contact" name="contact" type="text" placeholder="@telegram or +971..."></div>
+      <div class="field"><label for="communityName">Community Name</label><input id="communityName" name="community_name" type="text" placeholder="E.g. Dubai Forex Traders" required></div>
 
       <div class="grid-2">
-        <div class="field">
-          <label for="communitySize">Velikost komunity</label>
-          <select id="communitySize" name="community_size" required>
-            <option value="" selected disabled>Vyberte rozsah</option>
-            <option value="0-50">0-50</option>
-            <option value="50-200">50-200</option>
-            <option value="200-1000">200-1000</option>
-            <option value="1000+">1000+</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="communityFocus">Zaměření komunity</label>
-          <select id="communityFocus" name="community_focus" required>
-            <option value="" selected disabled>Vyberte zaměření</option>
-            <option value="forex">Forex</option>
-            <option value="crypto">Crypto</option>
-            <option value="trading-education">Trading edukace</option>
-            <option value="other">Jiné</option>
-          </select>
-        </div>
+        <div class="field"><label for="communitySize">Community Size</label><select id="communitySize" name="community_size" required><option value="" selected disabled>Select range</option><option value="0-50">0-50</option><option value="50-200">50-200</option><option value="200-1000">200-1000</option><option value="1000+">1000+</option></select></div>
+        <div class="field"><label for="communityFocus">Community Focus</label><select id="communityFocus" name="community_focus" required><option value="" selected disabled>Select focus</option><option value="forex">Forex</option><option value="crypto">Crypto</option><option value="trading-education">Trading Education</option><option value="other">Other</option></select></div>
       </div>
 
       <div class="checks">
-        <label class="check" for="ackCredits">
-          <input id="ackCredits" name="ack_credits" type="checkbox" required>
-
-         <span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;"> Beru na vědomí, že Arena Credits nemají finanční hodnotu a slouží výhradně jako simulace výkonnostních metrik a konverze komunity.</span>
-        </label>
-
-        <label class="check" for="ackTerms">
-          <input id="ackTerms" name="ack_terms" type="checkbox" required>
-          <span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;">Souhlasím s Terms a Privacy Policy a potvrzuji spuštění platformy v testovacím režimu</span>
-        </label>
+        <label class="check" for="ackCredits"><input id="ackCredits" name="ack_credits" type="checkbox" required><span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;">I acknowledge that Arena Credits have no financial value and are used only to simulate performance metrics and community conversion.</span></label>
+        <label class="check" for="ackTerms"><input id="ackTerms" name="ack_terms" type="checkbox" required><span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;">I agree to the Terms and Privacy Policy and confirm the platform launch in test mode.</span></label>
       </div>
 
-      <button class="submit" id="submitBtn" type="submit" disabled>Aktivovat Arénu</button>
-
-      <p class="form-foot">Odesláním formuláře spustíte verifikaci e-mailu. Akce vyžaduje potvrzení obou prohlášení.</p>
+      <button class="submit" id="submitBtn" type="submit" disabled>Activate Arena</button>
+      <p class="form-foot">Submitting the form starts email verification. This action requires confirmation of both statements.</p>
     </form>
 
-    <div class="success" id="successBox" role="status" aria-live="polite">
-      <strong>Ověřte svůj e-mail</strong>
-      <p>Poslali jsme vám ověřovací link. Po ověření získáte přístup do dashboardu, kde vytvoříte Arénu a získate vstupní link pro komunitu.</p>
-    </div>
+    <div class="success" id="successBox" role="status" aria-live="polite"><strong>Verify your email</strong><p>We have sent you a verification link. After verification, you will get access to the dashboard, where you can create your Arena and receive the entry link for your community.</p></div>
   </section>
 </main>
 
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <div>
-      Platforma arenix.app je softwarová infrastruktura provozovaná společností AKO Solutions LLC, Dubai, Spojené arabské emiráty. Platforma slouží jako zátěžový test výkonnosti a konverze vaší komunity. Prostředí Arény běží v uzavřeném režimu Arena Credits. Arena Credits slouží výhradně k ukázce arénových, leaderboardových, poolových a distribučních mechanik. Arena Credits nejsou peníze, nemají peněžní hodnotu a nepředstavují nárok na výplatu, zisk, investiční výnos ani finanční odměnu. ARENIX  ani AKO Solutions LLC v žádné fázi nepřijímá, nedrží, nespravuje ani nevyplácí klientské peněžní prostředky. Veškeré procesy, výpočty poolů a distribuční logika jsou řízeny pravidly systému a programovým kódem. Systém neposkytuje investiční služby, finanční poradenství, směnné služby ani platební služby.
-    </div>
-    <nav class="footer-links" aria-label="Footer links">
-      <a href="https://bossi859-beep.github.io/terms_CZ/">Terms</a>
-      <a href="https://bossi859-beep.github.io/privacy_CZ/">Privacy Policy</a>
-    </nav>
-  </div>
-</footer>
+<footer class="footer"><div class="wrap footer-inner"><div>The arenix.app platform is a software infrastructure operated by AKO Solutions LLC, Dubai, United Arab Emirates. The platform is used as a performance and conversion stress test for your community. The Arena environment runs in a closed Arena Credits mode. Arena Credits are used exclusively to demonstrate arena, leaderboard, pool and distribution mechanics. Arena Credits are not money, have no monetary value and do not represent any entitlement to payout, profit, investment return or financial reward. ARENIX and AKO Solutions LLC do not, at any stage, accept, hold, manage or pay out client funds. All processes, pool calculations and distribution logic are governed by system rules and program code. The system does not provide investment services, financial advice, exchange services or payment services.</div><nav class="footer-links" aria-label="Footer links"><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy Policy</a></nav></div></footer>
 
 <script>
 const form = document.getElementById('arenaForm');
@@ -266,22 +225,10 @@ const submitBtn = document.getElementById('submitBtn');
 const ackCredits = document.getElementById('ackCredits');
 const ackTerms = document.getElementById('ackTerms');
 const successBox = document.getElementById('successBox');
-
-function updateButtonState(){
-  submitBtn.disabled = !(ackCredits.checked && ackTerms.checked);
-}
+function updateButtonState(){ submitBtn.disabled = !(ackCredits.checked && ackTerms.checked); }
 ackCredits.addEventListener('change', updateButtonState);
 ackTerms.addEventListener('change', updateButtonState);
-
-form.addEventListener('submit', function(event){
-  event.preventDefault();
-
-  // Developer note:
-  // Replace this demo success state with API submit + email verification flow.
-  // Suggested endpoint: form.dataset.devEndpoint
-  form.style.display = 'none';
-  successBox.style.display = 'block';
-});
+form.addEventListener('submit', function(event){ event.preventDefault(); form.style.display = 'none'; successBox.style.display = 'block'; });
 </script>
 </body>
 </html>
