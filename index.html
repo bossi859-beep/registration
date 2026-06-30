@@ -190,7 +190,7 @@ input:focus,select:focus{border-color:rgba(53,227,162,.58);box-shadow:0 0 0 4px 
   <section class="form-panel" aria-label="Registration form">
     <div class="form-head">
       <h2>Arena Activation</h2>
-      <p>After email verification, the system will automatically generate your Arena Link and activate access.</p>
+      <p>Once your email is verified, your Arena Link will be generated and access granted immediately.</p>
     </div>
 
     <form id="arenaForm" action="#" method="post" data-dev-endpoint="/api/partners/training-arena/register">
@@ -205,8 +205,9 @@ input:focus,select:focus{border-color:rgba(53,227,162,.58);box-shadow:0 0 0 4px 
       </div>
 
       <div class="checks">
-        <label class="check" for="ackCredits"><input id="ackCredits" name="ack_credits" type="checkbox" required><span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;">I acknowledge that Arena Credits have no financial value and are used only to simulate performance metrics and community conversion.</span></label>
-        <label class="check" for="ackTerms"><input id="ackTerms" name="ack_terms" type="checkbox" required><span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;">I agree to the Terms and Privacy Policy and confirm the platform launch in test mode.</span></label>
+        <label class="check" for="ackCredits"><input id="ackCredits" name="ack_credits" type="checkbox" required><span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;">I acknowledge that Arena Credits have no financial value, are not redeemable, and are used solely to display performance metrics and the community’s conversion potential.
+</span></label>
+        <label class="check" for="ackTerms"><input id="ackTerms" name="ack_terms" type="checkbox" required><span style="font-size:10px; line-height:1.35; font-weight:600; text-transform:none; letter-spacing:0;">I agree to the Terms and Privacy Policy and confirm that my Arena will be launched in test mode.</span></label>
       </div>
 
       <button class="submit" id="submitBtn" type="submit" disabled>Activate Arena</button>
